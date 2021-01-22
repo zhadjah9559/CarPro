@@ -10,26 +10,40 @@ namespace CarPro.Models
     public class Car
     {
         public int Id { get; set; }
+        //How to declare a PARENT (Foreign Key)
+        public int LotId { get; set; }
+
+        [Required(ErrorMessage = "Make required")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
+        [StringLength(20, MinimumLength = 5)]
         public string Make { get; set; }
+
+        [Required(ErrorMessage = "Model required")]
+        [StringLength(20, MinimumLength = 6)]
         public string Model { get; set; }
-        //validation annotation
+
+        [Display(Name = "Model Year")]
+        [Required(ErrorMessage = "Model Year required")]
+        [StringLength(4)]
         public int ModelYear { get; set; }
 
+        [Required(ErrorMessage = "Mileage required")]
+        [StringLength(20, MinimumLength = 3)]
         public int Mileage { get; set; }
 
-        [DisplayName("Price")]
-        [RegularExpression(@"^\$?\d+(\.(\d{2}))?$")]
+        [Required(ErrorMessage = "Price required")]
+        [RegularExpression(@"\$\d+\.\d{2}")]
         public Decimal Price { get; set; }
 
+        [Required(ErrorMessage = "Color required")]
+        [StringLength(20, MinimumLength = 4)]
         public string Color { get; set; }
 
-        //find annotation to properly display that
-        public string WheelDrive { get; set; }
-
-
-
-        //How to declare a Parent (Foreign Key)
-        public int LotId { get; set; }
+        [Required]
+        [Display(Name = "Drive Type")]
+        public bool is4WD { get; set; }
+       
+      
         public virtual Lot Lot { get; set; }
     }
 }
