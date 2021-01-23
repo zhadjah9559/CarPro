@@ -8,40 +8,114 @@
 <div class="col-md-12" style="background-color: #F5F8FA;">
 
     <h3 class="title-5 m-b-35">Available Cars</h3>
-    <div class="table-data__tool">
-        <div class="table-data__tool-left">
-            <div class="rs-select2--light rs-select2--md">
-                <select class="js-select2 select2-hidden-accessible" name="property" tabindex="-1" aria-hidden="true">
-                    <option selected="selected"></option>
-                    <option value="">Price</option>
-                    <option value="">Mileage</option>
-                    <option value="">Model Year</option>
-                </select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 127.65px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-property-2x-container"><span class="select2-selection__rendered" id="select2-property-2x-container" title="All Properties">All Properties</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                <div class="dropDownSelect2"></div>
-            </div>
-            <div class="rs-select2--light rs-select2--sm">
-                <select class="js-select2 select2-hidden-accessible" name="time" tabindex="-1" aria-hidden="true">
-                    <option selected="selected">Today</option>
-                    <option value="">3 Days</option>
-                    <option value="">1 Week</option>
-                </select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 74.2333px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-time-9k-container"><span class="select2-selection__rendered" id="select2-time-9k-container" title="Today">Today</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                <div class="dropDownSelect2"></div>
-            </div>
-
-        </div>
-    </div>
     <div class="table-responsive table-responsive-data2">
         <table class="table table-data2">
             <thead>
                 <tr>
-                    <th>@Html.ActionLink("Make", "Index", "Cars", new { sortOrder = "Make" })</th>
-                    <th>@Html.ActionLink("Model", "Index", "Cars", new { sortOrder = "Model" })</th>
-                    <th>@Html.ActionLink("ModelYear", "Index", "Cars", new { sortOrder = "ModelYear" })</th>
-                    <th>@Html.ActionLink("Mileage", "Index", "Cars", new { sortOrder = "Mileage" })</th>
-                    <th>@Html.ActionLink("Price", "Index", "Cars", new { sortOrder = "Price" })</th>
-                    <th>@Html.ActionLink("Color", "Index", "Cars", new { sortOrder = "Color" })</th>
-                    <th>@Html.ActionLink("DriveTrain", "Index", "Cars", new { sortOrder = "DriveTrain" })</th>
-                    <th>@Html.ActionLink("Lot", "Index", "Cars", new { sortOrder = "Lot" })</th>
+                    <th>
+                        <div class="row">
+                            <div class="col-4">
+                                Make
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=MakeAscending">&#8681;</a></p>
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=MakeDescending">&#8679;</a></p>
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="row">
+                            <div class="col-4">
+                                Model
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=ModelAscending">&#8681;</a></p>
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=ModelDescending">&#8679;</a></p>
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="row">
+                            <div class="col-4">
+                                Year
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=ModelYearAscending">&#8681;</a></p>
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=ModelYearDescending">&#8679;</a></p>
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="row">
+                            <div class="col-4">
+                                Miles
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=MileageAscending">&#8681;</a></p>
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=MileageDescending">&#8679;</a></p>
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="row">
+                            <div class="col-4">
+                                Price
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=PriceAscending">&#8681;</a></p>
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=PriceDescending">&#8679;</a></p>
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="row">
+                            <div class="col-4">
+                                Color
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=ColorAscending">&#8681;</a></p>
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=ColorDescending">&#8679;</a></p>
+                            </div>
+                         </div>
+                    </th>
+                    <th>
+                        <div class="row">
+                            <div class="col-4">
+                                WD
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=DriveTrainAscending">&#8681;</a></p>
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=DriveTrainDescending">&#8679;</a></p>
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="row">
+                            <div class="col-4">
+                                Lot
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=LotAscending">&#8681;</a></p>
+                            </div>
+                            <div class="col-1">
+                                <p><a href="Cars?sortOrder=LotDescending">&#8679;</a></p>
+                            </div>
+                        </div>
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -74,7 +148,7 @@
                             @Html.DisplayFor(modelItem => item.DriveTrain)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Lot.ManagerName)
+                            @Html.DisplayFor(modelItem => item.Lot.Name)
                         </td>
                     </tr>
                     <tr class="spacer"></tr>

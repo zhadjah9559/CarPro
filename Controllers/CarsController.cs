@@ -28,36 +28,71 @@ namespace CarPro.Controllers
 
                 switch (sortOrder)
                 {
-                    case "ModelYear":
+                    //In case the user hits the down arrow, order the table in a descending form
+                    case "ModelYearDescending":
                         cars = cars.OrderByDescending(e => e.ModelYear);
                         break;
-                    case "Id":
+                    case "IdDescending":
                         cars = cars.OrderByDescending(e => e.Id);
                         break;
-                    case "Lot":
+                    case "LotDescending":
                         cars = cars.OrderByDescending(e => e.Lot);
                         break;
-                    case "LotId":
+                    case "LotIdDescending":
                         cars = cars.OrderByDescending(e => e.LotId);
                         break;
-                    case "Make":
+                    case "MakeDescending":
                         cars = cars.OrderByDescending(e => e.Make);
                         break;
-                    case "Mileage":
+                    case "MileageDescending":
                         cars = cars.OrderByDescending(e => e.Mileage);
                         break;
-                    case "Model":
+                    case "ModelDescending":
                         cars = cars.OrderByDescending(e => e.Model);
                         break;
-                    case "Price":
+                    case "PriceDescending":
                         cars = cars.OrderByDescending(e => e.Price);
                         break;
-                    case "Color":
+                    case "ColorDescending":
                         cars = cars.OrderByDescending(e => e.Color);
                         break;
-                    case "DriveTrain":
+                    case "DriveTrainDescending":
                         cars = cars.OrderByDescending(e => e.DriveTrain);
                         break;
+
+
+                    //In case the user hits the up arrow, order the table in a ascending form
+                    case "ModelYearAscending":
+                        cars = cars.OrderBy(e => e.ModelYear);
+                        break;
+                    case "IdAscending":
+                        cars = cars.OrderBy(e => e.Id);
+                        break;
+                    case "LotAscending":
+                        cars = cars.OrderBy(e => e.Lot);
+                        break;
+                    case "LotIdAscending":
+                        cars = cars.OrderBy(e => e.LotId);
+                        break;
+                    case "MakeAscending":
+                        cars = cars.OrderBy(e => e.Make);
+                        break;
+                    case "MileageAscending":
+                        cars = cars.OrderBy(e => e.Mileage);
+                        break;
+                    case "ModelAscending":
+                        cars = cars.OrderBy(e => e.Model);
+                        break;
+                    case "PriceAscending":
+                        cars = cars.OrderBy(e => e.Price);
+                        break;
+                    case "ColorAscending":
+                        cars = cars.OrderBy(e => e.Color);
+                        break;
+                    case "DriveTrainAscending":
+                        cars = cars.OrderBy(e => e.DriveTrain);
+                        break;
+
 
                     default:
                         cars = cars.OrderByDescending(s => s.Model);
