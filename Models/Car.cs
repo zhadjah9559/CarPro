@@ -40,8 +40,8 @@ namespace CarPro.Models
         public string Color { get; set; }
 
         [Required]
-        [Display(Name = "Drive Type")]
-        public bool is4WD { get; set; }
+        [Display(Name = "Drive Train")]
+        public string DriveTrain { get; set; }
        
       
         public virtual Lot Lot { get; set; }

@@ -20,11 +20,55 @@ namespace CarPro.Controllers
         }
 
         // GET: Cars
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
+            if (sortOrder != null)
+            {
+                var cars = _context.Cars.AsQueryable();
+
+                switch (sortOrder)
+                {
+                    case "ModelYear":
+                        cars = cars.OrderByDescending(e => e.ModelYear);
+                        break;
+                    case "Id":
+                        cars = cars.OrderByDescending(e => e.Id);
+                        break;
+                    case "Lot":
+                        cars = cars.OrderByDescending(e => e.Lot);
+                        break;
+                    case "LotId":
+                        cars = cars.OrderByDescending(e => e.LotId);
+                        break;
+                    case "Make":
+                        cars = cars.OrderByDescending(e => e.Make);
+                        break;
+                    case "Mileage":
+                        cars = cars.OrderByDescending(e => e.Mileage);
+                        break;
+                    case "Model":
+                        cars = cars.OrderByDescending(e => e.Model);
+                        break;
+                    case "Price":
+                        cars = cars.OrderByDescending(e => e.Price);
+                        break;
+                    case "Color":
+                        cars = cars.OrderByDescending(e => e.Color);
+                        break;
+                    case "DriveTrain":
+                        cars = cars.OrderByDescending(e => e.DriveTrain);
+                        break;
+
+                    default:
+                        cars = cars.OrderByDescending(s => s.Model);
+                        break;
+                }
+                return View(cars.ToList());
+            }
             var applicationDbContext = _context.Cars.Include(c => c.Lot);
             return View(await applicationDbContext.ToListAsync());
         }
+
 
         // GET: Cars/Details/5
         public async Task<IActionResult> Details(int? id)

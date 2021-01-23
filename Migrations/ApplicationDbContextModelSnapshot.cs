@@ -30,6 +30,10 @@ namespace CarPro.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
+                    b.Property<string>("DriveTrain")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("LotId")
                         .HasColumnType("integer");
 
@@ -53,9 +57,6 @@ namespace CarPro.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
-
-                    b.Property<bool>("is4WD")
-                        .HasColumnType("boolean");
 
                     b.HasKey("Id");
 

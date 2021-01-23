@@ -44,7 +44,7 @@ namespace CarPro.Data
                             Mileage = 20000,
                             Price = 3300,
                             Color = "Black",
-                            is4WD = true
+                            DriveTrain = "4WD"
                         },
 
                         new Car
@@ -56,7 +56,7 @@ namespace CarPro.Data
                             Mileage = 29000,
                             Price = 8300,
                             Color = "Red",
-                            is4WD = false
+                            DriveTrain = "2WD"
                         },
 
                         new Car
@@ -68,7 +68,7 @@ namespace CarPro.Data
                             Mileage = 67000,
                             Price = 6300,
                             Color = "Ruby",
-                            is4WD = true
+                            DriveTrain = "4WD"
                         },
 
                         new Car
@@ -80,7 +80,7 @@ namespace CarPro.Data
                             Mileage = 30000,
                             Price = 9500,
                             Color = "Red",
-                            is4WD = true
+                            DriveTrain = "2WD"
                         },
 
                         new Car
@@ -92,7 +92,7 @@ namespace CarPro.Data
                             Mileage = 58000,
                             Price = 13000,
                             Color = "Grey",
-                            is4WD = false,
+                            DriveTrain = "4WD"
                         }
                     ); 
                     context.SaveChanges();
