@@ -136,7 +136,7 @@ namespace CarPro.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Make,Model,ModelYear,Mileage,Price,Color,is4WD,LotId")] Car car)
+        public async Task<IActionResult> Create([Bind("Id,LotId,Make,Model,ModelYear,Mileage,Price,Color,DriveTrain")] Car car)
         {
             if (ModelState.IsValid)
             {
@@ -170,7 +170,7 @@ namespace CarPro.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Make,Model,ModelYear,Mileage,Price,Color,is4WD,LotId")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Make,Model,ModelYear,Mileage,Price,Color,DriveTrain,LotId")] Car car)
         {
             if (id != car.Id)
             {

@@ -2,15 +2,17 @@
 using CarPro.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace CarPro.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210124190258_debuggingPrice")]
+    partial class debuggingPrice
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,6 +46,7 @@ namespace CarPro.Migrations
                         .HasColumnType("character varying(20)");
 
                     b.Property<int>("Mileage")
+                        .HasMaxLength(20)
                         .HasColumnType("integer");
 
                     b.Property<string>("Model")
@@ -52,10 +55,11 @@ namespace CarPro.Migrations
                         .HasColumnType("character varying(20)");
 
                     b.Property<int>("ModelYear")
+                        .HasMaxLength(4)
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("numeric");
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 
